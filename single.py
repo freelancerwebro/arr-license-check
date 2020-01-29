@@ -10,7 +10,7 @@ if len(sys.argv) >= 2:
 	if (service.getStatus() == True):
 		print('Valid! => license: [' + sys.argv[1] + '], expiration: [' + service.getExpiration() + ']')
 	else:
-		raise Exception('Invalid license plate! => ' + sys.argv[1])
+		raise Exception('Invalid transport license [' + sys.argv[1] + ']')
 else:
 	raise Exception('License plate is missing!')
 	
