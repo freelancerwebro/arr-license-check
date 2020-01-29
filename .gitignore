@@ -3,3 +3,5 @@ __pycache__/
 test.py
 src/__pycache__/
 src/.DS_Store
+src/config/__pycache__/
+src/config/.DS_Store
