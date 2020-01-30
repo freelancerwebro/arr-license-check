@@ -1,16 +1,9 @@
-from src.LicensePlateSplitter import LicensePlateSplitter
-from src.ArrLicenseService import ArrLicenseService
+from src.ArrLicenseFacade import ArrLicenseFacade
 import sys
 
 if len(sys.argv) >= 2:
-	splitter = LicensePlateSplitter(sys.argv[1])
-	service = ArrLicenseService(splitter)
-	service.process()
-
-	if (service.getStatus() == True):
-		print('Valid! => license: [' + sys.argv[1] + '], expiration: [' + service.getExpiration() + ']')
-	else:
-		raise Exception('Invalid transport license [' + sys.argv[1] + ']')
+	arrLicense = ArrLicenseFacade(sys.argv[1])
+	arrLicense.process()
 else:
 	raise Exception('License plate is missing!')
 	
